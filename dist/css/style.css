@@ -6,6 +6,9 @@ body.skin-blue.sidebar-mini{
 a {
     color: #9A7A32;
 }
+a:hover, a:active, a:focus{
+  color: #9A7A32;
+}
 .action {
   background-color: #9A7A32;
   border-radius: 5px;
@@ -446,12 +449,7 @@ sup {
 #filter-search .form-control, #filter-search .input-group.date {
     width: 115px;
 }
-/*
-.featured-checkbox{
-        width: 20px;
-    height: 20px;
-}
-*/
+
 /****css added by harish Design****/
 .mer-data-left .mer-name {
     border-right: 1px solid #eee;
@@ -491,7 +489,7 @@ sup {
     padding:15px 0px !important;
 }
 .merchant-section{
-    background:#ecf0f5;
+    background:#E3D0A7;
     padding-bottom:5px;
     margin-bottom:10px;
 }
@@ -500,10 +498,55 @@ sup {
     padding-bottom:5px;
     margin-bottom:10px;
 }
+.clone-btn {
+    background: #9A7A32;
+    box-shadow: none;
+    border: none;
+    padding: 8px 16px;
+    color: #fff;
+    font-weight: 600;
+}
+.add-new-bank-details {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    position: relative;
+}
+.clone-del-btn {
+    position: absolute;
+    top: -10px;
+    right: 25px;
+    background: #1f1f1f;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22px;
+    color: #fff;
+}
+.clone-del-btn:hover{
+  color:#fff;
+}
+.merchant-section .add-new-bank-details .clone-del-btn{
+  display: none;
+}
+.merchant-section .cloned-bank-details .add-new-bank-details .clone-del-btn{
+  display: block;
+}
+.pay-bal-del p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.pay-bal-del {
+    display: inline-block;
+    margin-top: 25px;
+}
+.pay-bal-del label {
+    margin-right: 10px;
+}
 .form-horizontal .merchant-section .merchantlablegroup .control-label{
     line-height:13px;
     text-align: left;
-    /*padding-left: 0;*/
 }
 .merchantlable{
     font-size: 20px;
@@ -571,12 +614,29 @@ sup {
 .modal-primary.emal-popup h3 {
     margin: 10px 0;
 }
+.merchant-view .form-group p {
+    margin-top: 8px;
+}
+.merchant-view .form-group {
+    margin-bottom: 0px;
+}
+.merchant-view .merchant-section .add-new-bank-details{
+  padding-bottom: 15px;
+}
+#payNow.modal-primary.emal-popup .modal-header h3, #payNow.modal-primary.emal-popup .modal-body p{
+color: #1f1f1f;
+}
 .modal-primary.emal-popup .modal-dialog {
     margin: 110px auto;
 }
 #customerEdit.modal-primary.emal-popup .modal-dialog {
     margin: 10px auto;
 }
+/*Manage Transactions css*/
+#transactions, #ewallet {
+    padding: 0;
+}
+/*Manage Transactions css*/
 #customerKycEdit .file-upload p {
     position: absolute;
     top:0px;

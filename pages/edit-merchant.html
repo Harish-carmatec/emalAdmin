@@ -3,10 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Manage CMS | CMS List</title>
+    <title>Manage Merchant | Edit Merchant</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    
+    <!-- custom css -->
+    <link rel="stylesheet" href="./../dist/css/style.css">
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="./../bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -26,8 +27,6 @@
     <link rel="stylesheet" href="./../bootstrap/css/bootstrap-select.min.css" />
     <!-- iCheck 1.0.1 -->
     <link rel="stylesheet" href="./../plugins/iCheck/all.css">
-    <!-- custom css -->
-    <link rel="stylesheet" href="./../dist/css/style.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -132,12 +131,12 @@
         </nav>
       </header>
       <!-- Left side column. contains the logo and sidebar -->
-      <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
+      <aside class="main-sidebar">                  
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+         <section class="sidebar">         
           <!-- sidebar menu: : style can be found in sidebar.less -->
          <ul class="sidebar-menu">
-            <li class="treeview active">
+            <li class="treeview">
               <a href="#">
                 <i class="fa fa-user"></i> <span>Manage User</span>
                 <i class="fa fa-angle-left pull-right"></i>
@@ -157,13 +156,13 @@
                 <li><a href="../pages/role-list.html"><i class="fa fa-caret-right"></i>Role List</a></li>
               </ul>
             </li>
-            <li class="treeview">
+            <li class="treeview active">
               <a href="#">
                 <i class="fa fa-taxi"></i> <span>Manage Driver</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="../pages/add-driver.html"><i class="fa fa-caret-right"></i>Add Driver</a></li>
+                <li class="active"><a href="../pages/add-driver.html"><i class="fa fa-caret-right"></i>Add Driver</a></li>
                 <li><a href="../pages/driver-list.html"><i class="fa fa-caret-right"></i>Driver List</a></li>
               </ul>
             </li>
@@ -196,7 +195,7 @@
                 <li><a href="../pages/add-category.html"><i class="fa fa-caret-right"></i>Add Category</a></li>
                 <li><a href="../pages/category-list.html"><i class="fa fa-caret-right"></i>Category List</a></li>
               </ul>
-            </li> 
+            </li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-star-o"></i> <span>Manage Review</span>
@@ -206,16 +205,26 @@
                 <li><a href="../pages/product-review-list.html"><i class="fa fa-caret-right"></i>Review List</a></li>
               </ul>
             </li>
-            <li class="treeview active">
+            <li class="treeview">
               <a href="#">
                 <i class="fa fa-clone"></i> <span>Manage CMS</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li><a href="../pages/add-page.html"><i class="fa fa-caret-right"></i>Add Page</a></li>
-                <li class="active"><a href="../pages/page-list.html"><i class="fa fa-caret-right"></i>Page List</a></li>
+                <li><a href="../pages/page-list.html"><i class="fa fa-caret-right"></i>Page List</a></li>
               </ul>
-            </li>  
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-clone"></i> <span>Manage Merchant</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="../pages/add-merchant.html"><i class="fa fa-caret-right"></i>Add Merchant</a></li>
+                <li><a href="../pages/merchant-list.html"><i class="fa fa-caret-right"></i>Merchant List</a></li>
+              </ul>
+            </li>    
           </ul>
         </section>
         <!-- /.sidebar -->
@@ -226,111 +235,189 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Manage CMS
+            Manage Merchant
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Manage CMS</a></li>
-            <li class="active">Page List</li>
+            <li><a href="#">Manage Merchant</a></li>
+            <li class="active">Edit Merchant</li>
           </ol>
         </section>
 
         <!-- Main content -->
-        <section class="content">          
-          <div class="box box-primary">
-                <div class="box-header">
-                  <h3 class="box-title">Page List</h3>
-                  <div class="pull-right">
-                  <a class="adddriver" href="../pages/add-page.html" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Add Page"><i class="fa fa-plus-square fa-lg"></i>Add Page</a>
-                  </div>
-                </div><!-- /.box-header -->               
-                <div class="box-body">
-                  <div class="table-responsive">
-                  <div class="trash-wrapper">
-                    <div class="move-to-trash" style="display: none;">
-                       <a data-toggle="tooltip" data-placement="right" title="" onclick="return confirm('Are you sure want to delete the selected roles ?')" data-original-title="Delete Selected"><i class="fa fa-trash-o fa-lg"></i></a>
+        <section class="content">   
+        <div class="row">
+         <div class="col-md-12">       
+            <div class="box box-primary">
+                  <div class="box-header">
+                    <h3 class="box-title">Edit Merchant</h3>
+                    <a class="btn btn-primary pull-right" href="../pages/merchant-list.html"><i class="fa fa-angle-left"></i> Back</a>
+                  </div><!-- /.box-header -->
+                  <div class="row">
+                    <div class="col-sm-8">
+                    <!-- form start -->
+                      <form class="form-horizontal">
+                        <div class="box-body">
+                        <div class="merchant-section first">
+                         <div class="form-group merchantlablegroup">
+                          <label for="ptitle" class="col-sm-12 control-label merchantlable">Merchant Details</label>
+                            </div> 
+
+
+
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">Merchant Name</label>
+                            <div class="col-sm-8">
+                              <input class="form-control" id="lname" placeholder="Enter Merchant Name" type="text">
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="fname" class="col-sm-3 control-label">Business Type</label>
+                            <div class="col-sm-8">
+                            <select class="selectpicker" id="createdby" title="Select">
+                              <option value="name1" selected disabled>Select Business Type</option>
+                              <option value="name1">Seller</option>
+                              <option value="name2">Re-seller</option>
+                            </select>
+                            </div>
+                          </div> 
+
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">Mobile</label>
+                            <div class="col-sm-8">
+                              <input class="form-control" id="lname" placeholder="Enter Mobile Number" type="text">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-8">
+                              <input class="form-control" id="lname" placeholder="Enter Email Id" type="Email">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">Address1</label>
+                            <div class="col-sm-8">
+                            <textarea class="form-control" id="address" name="comment" form="usrform" placeholder="Enter The Address here..."></textarea>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">Address2</label>
+                            <div class="col-sm-8">
+                            <textarea class="form-control" id="address" name="comment" form="usrform" placeholder="Enter The Address here..."></textarea>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">City</label>
+                            <div class="col-sm-8">
+                              <input class="form-control" id="lname" placeholder="Enter City Name" type="text">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">State/Province</label>
+                            <div class="col-sm-8">
+                                <select class="selectpicker" id="role" title="Select State/Province">
+                                <option value="administrator" selected disabled>Select State/Province </option>
+                                <option value="administrator">Karnataka</option>
+                                <option value="Merchant">Karnataka</option>
+                                </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">Country</label>
+                            <div class="col-sm-8">
+                                <select class="selectpicker" id="role" title="Select Country">
+                                <option value="administrator" selected disabled>Select Country </option>
+                                <option value="administrator">USA</option>
+                                <option value="Merchant">India</option>
+                                </select>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">Zip/Postal</label>
+                            <div class="col-sm-8">
+                              <input class="form-control" id="lname" placeholder="Enter Zip/Postal Name" type="text">
+                            </div>
+                          </div>
+                        <div class="merchant-section second">
+                         <div class="form-group merchantlablegroup">
+                          <label for="ptitle" class="col-sm-12 control-label merchantlable">Bank Details</label>
+                            </div>
+
+                          <div class="add-new-bank-details">
+                          <a href="javascript:void(0);" class="clone-del-btn"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">Bank Name</label>
+                            <div class="col-sm-8">
+                              <input class="form-control" id="lname" placeholder="Enter Bank Name" type="text">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">Account Name</label>
+                            <div class="col-sm-8">
+                              <input class="form-control" id="lname" placeholder="Enter Name on Account" type="text">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">Account Number/ IBAN No</label>
+                            <div class="col-sm-8">
+                              <input class="form-control" id="lname" placeholder="Enter Account Number" type="text">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cloned-bank-details">
+                        </div>
+                        <div class="form-group">
+                          <label for="" class="col-sm-3 control-label"></label>
+                          <div class="col-sm-8">
+                            <button type="button" class="clone-btn"><i class="fa fa-plus" aria-hidden="true"></i>  Add more accounts</button>
+                          </div>
+                        </div>
+                        
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">Status</label>
+                            <div class="col-sm-8">
+                              <select class="selectpicker" data-show-subtext="true" data-live-search="true">
+                            <option>Active</option>
+                            <option>Inactive</option>                    
+                        </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-3 control-label">Currency</label>
+                            <div class="col-sm-8">
+                              <select class="selectpicker" data-show-subtext="true" data-live-search="true">
+                                <option>Rupees</option>
+                                <option>Dollar</option>
+                                <option>Penna</option>                    
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                            
+                          <div class="form-group">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-9 text-right">
+                              <button type="submit" class="btn btn-primary">Save</button>
+                              <button type="submit" class="btn btn-danger">Cancel</button>
+                            </div>
+                          </div> 
+                        </div>  
+                        </div><!-- /.box-body -->                    
+                      </form>
                     </div>
-                 </div>
-                  <table id="pagelist" class="table table-bordered">
-                    <thead>
-                      <tr> 
-                        <th>Sr.No</th>                       
-                        <th>Page Title</th>
-                        <th>Created by</th>
-                        <th>Created date</th>
-                        <th>Status</th>
-                        <th>Action</th>                     
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>001</td>
-                        <td>Home</td>
-                        <td>admin</td>
-                        <td>07/08/2016</td>
-                        <td>
-                          <div class="onoffswitch">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch13" checked>
-                            <label class="onoffswitch-label" for="myonoffswitch13">
-                                <span class="onoffswitch-inner"></span>
-                                <span class="onoffswitch-switch"></span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>            
-                        <a href="../pages/edit-page.html" class="action"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit"></i></a>
-                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#myModal"></i>
-                        </a>
-<!--                        <a href="javascript:void(0)" class="action"><i class="fa fa-eye" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="View"></i></a>-->
-                        </td>                       
-                      </tr> 
-                      <tr>
-                        <td>002</td>
-                        <td>About Us</td>
-                        <td>admin</td>
-                        <td>08/08/2016</td>
-                        <td>
-                          <div class="onoffswitch">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch13" checked>
-                            <label class="onoffswitch-label" for="myonoffswitch13">
-                                <span class="onoffswitch-inner"></span>
-                                <span class="onoffswitch-switch"></span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>            
-                        <a href="../pages/edit-page.html" class="action"><i class="fa fa-pencil" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit"></i></a>
-                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#myModal"></i>
-                        </a>
-<!--                        <a href="javascript:void(0)" class="action"><i class="fa fa-eye" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="View"></i></a>-->
-                        </td>                       
-                      </tr>                     
-                    </tbody>
-                  </table>
                   </div>
-                </div><!-- /.box-body -->
-          </div><!-- /.box -->
+            </div><!-- /.box -->
+          </div>
+        </div>
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
         <strong>Copyright &copy; 2017-2018 <a href="https://www.carmatec.com/" target="_blank">Carmatec</a>.</strong> All rights reserved.
       </footer>
     </div><!-- ./wrapper -->
-
-  <!-- Delete confirmation pop-up -->
-  <div class="modal fade modal-primary delete-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body text-center">
-          <h3>Are you sure want to delete?</h3>
-        </div>
-        <div class="modal-footer text-center">
-          <button type="button" class="btn btn-outline">Delete</button>
-	  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
      <!-- jQuery 2.1.4 -->
     <script src="./../plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -343,10 +430,6 @@
     <script src="./../plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <!-- FastClick -->
     <script src="./../plugins/fastclick/fastclick.min.js"></script>
-    <!-- datepicker -->
-    <script src="./../dist/js/bootstrap-datepicker.js"></script>
-    <!-- Bootstrap Select -->
-    <script src="./../bootstrap/js/bootstrap-select.min.js"></script>
     <!-- AdminLTE App -->
     <script src="./../dist/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
@@ -355,26 +438,21 @@
     <script src="./../plugins/iCheck/icheck.min.js"></script>
     <!-- page script -->
     <script src="./../dist/js/custom.js"></script>
-
-     <script type="text/javascript">
-      $('.btn-toggle').click(function() 
-      {
-        $(this).find('.btn').toggleClass('active');  
-        if ($(this).find('.btn-success').size()>0) {
-          $(this).find('.btn').toggleClass('btn-success');
-        }
-        $(this).find('.btn').toggleClass('btn-default');  
+    <!-- datepicker -->
+    <script src="./../dist/js/bootstrap-datepicker.js"></script>
+    <!-- Bootstrap Select -->
+    <script src="./../bootstrap/js/bootstrap-select.min.js"></script>
+    <!-- page script -->
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".clone-btn").on('click' ,function(){
+         $('.merchant-section').find(".add-new-bank-details:first").clone().appendTo( ".cloned-bank-details" );
+           $('.clone-del-btn').on('click',function(){
+            //alert();
+            $(this).closest('.add-new-bank-details').remove();
+          });
+        });
       });
-         
- $('.sidebar-menu').html('').load('menu.html');
-  $(document).ajaxStop(function () {
-       $('.cms,.listpage').addClass('active'); 
-  });
-  
-// $('form').submit(function(){
-//   alert($(this["options"]).val());
-//     return false;
-// });
     </script>
   </body>
 </html>

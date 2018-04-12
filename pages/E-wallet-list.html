@@ -229,172 +229,286 @@
         <!-- Main content -->
         <section class="content">          
           <div class="box box-primary">
-                <div class="box-header">
-                  <h3 class="box-title">E-wallet List</h3>
-                </div><!-- /.box-header -->               
-                <div class="box-body">
-                <div class="row">
-                  <div class="filter-section">
-                    <form class="form-inline clearfix" id="filter-search">
-                      <div class="form-group">
-                        <label for="">Status</label>
-                        <select class="selectpicker" >
-                            <option value="administrator">All</option>
-                            <option value="Merchant">Active</option>
-                            <option value="Merchant">Inactive</option>
-                        </select>
-                      </div>
-                       <div class="input-group date" data-provide="datepicker">
-                        <label for="">From Date</label>
-                        <div class="filter-date">
-                          <input type="text" class="form-control" id="data-date">
-                          <div class="input-group-addon">
-                              <span class="fa fa-calendar"></span>
+            <div class="box-header">
+              <h3 class="box-title">Manage Transactions</h3>
+              <div class="pull-right">
+              <a class="adddriver" href="#" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Export Data"><i class="fa fa-cloud-download" aria-hidden="true"></i>Export</a>
+              </div>
+            </div><!-- /.box-header -->    
+              <div class="box-body">
+              <div class="col-md-12 customer-tabs">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a data-toggle="tab" href="#transactions">Transactions</a></li>
+                  <li><a data-toggle="tab" href="#ewallet">eWallet</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div id="ewallet" class="tab-pane fade">
+                    <div class="row">
+                    <div class="filter-section col-md-9">
+                      <form class="form-inline clearfix" id="filter-search">
+                        <div class="form-group">
+                          <label for="">Status</label>
+                          <select class="selectpicker" >
+                              <option value="administrator">All</option>
+                              <option value="Merchant">Success</option>
+                              <option value="Merchant">Failed</option>
+                              <option value="Merchant">Error</option>
+                          </select>
+                        </div>
+                         <div class="input-group date" data-provide="datepicker">
+                          <label for="">From Date</label>
+                          <div class="filter-date">
+                            <input type="text" class="form-control" id="data-date">
+                            <div class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                       <div class="input-group date" data-provide="datepicker">
-                        <label for="">To Date</label>
-                        <div class="filter-date">
-                          <input type="text" class="form-control" id="data-date">
-                          <div class="input-group-addon">
-                              <span class="fa fa-calendar"></span>
+                         <div class="input-group date" data-provide="datepicker">
+                          <label for="">To Date</label>
+                          <div class="filter-date">
+                            <input type="text" class="form-control" id="data-date">
+                            <div class="input-group-addon">
+                                <span class="fa fa-calendar"></span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="form-group search-filter">
-               
-                        <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
-                        <div class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        <div class="form-group search-filter">
+                          <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
+                          <div class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                          </div>
                         </div>
+                      </form>
+                    </div>
+                    <div class="pay-bal-del col-md-3">
+                      <p class="paid"><label>Total amount paid:</label><span>AED 212.59</span></p>
+                      <p class="due"><label>Total amount due:</label><span>AED 212.59</span></p>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+                      <table id="e-wallet" class="table table-bordered">
+                        <thead>
+                          <tr> 
+                            <th>Sr.No</th>
+                            <th>Ref ID</th>                        
+                            <th>Customer</th>
+                            <th>Company</th>
+                            <th>Card Type</th>
+                            <th>Top-up Date</th> 
+                            <th>Top-up Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>                     
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td>01</td>
+                          <td>E0001</td>
+                          <td>Alex</td>
+                          <td>test@gmail.com</td>
+                          <td>123456789</td>
+                          <td>01-01-1918</td>
+                          <td>AED 300.00</td>
+                          <td>
+                            <div class="onoffswitch">
+                              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch13" checked>
+                              <label class="onoffswitch-label" for="myonoffswitch13">
+                                <span class="onoffswitch-inner"></span>
+                                <span class="onoffswitch-switch"></span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>
+                            <a href="../pages/view-customer.html" class="action"><i class="fa fa-eye" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="View"></i></a>
+                            <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Change Status"><i class="fa fa-flag" data-toggle="modal" data-target="#changeStatus"></i></a>
+                            <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#myModal"></i></a>
+                          </td>                      
+                        </tr>
+                        <tr>
+                          <td>02</td>
+                          <td>E0001</td>
+                          <td>Alex</td>
+                          <td>test@gmail.com</td>
+                          <td>123456789</td>
+                          <td>01-01-1918</td>
+                          <td>AED 300.00</td>
+                          <td>
+                            <div class="onoffswitch">
+                              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch14" checked>
+                              <label class="onoffswitch-label" for="myonoffswitch13">
+                                  <span class="onoffswitch-inner"></span>
+                                  <span class="onoffswitch-switch"></span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>
+                            <a href="../pages/view-customer.html" class="action"><i class="fa fa-eye" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="View"></i></a>
+                            <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Change Status"><i class="fa fa-flag" data-toggle="modal" data-target="#changeStatus"></i></a>
+                            <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#myModal"></i></a>
+                          </td>                      
+                        </tr>
+                        <tr>
+                          <td>03</td>
+                          <td>E0001</td>
+                          <td>Alex</td>
+                          <td>test@gmail.com</td>
+                          <td>123456789</td>
+                          <td>01-01-1918</td>
+                          <td>AED 300.00</td>
+                          <td>
+                            <div class="onoffswitch">
+                              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch15" checked>
+                              <label class="onoffswitch-label" for="myonoffswitch13">
+                                <span class="onoffswitch-inner"></span>
+                                <span class="onoffswitch-switch"></span>
+                              </label>
+                            </div>
+                          </td> 
+                          <td>
+                            <a href="../pages/view-customer.html" class="action"><i class="fa fa-eye" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="View"></i></a>
+                            <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Change Status"><i class="fa fa-flag" data-toggle="modal" data-target="#changeStatus"></i></a>
+                            <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#myModal"></i></a>
+                          </td>                     
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>E0001</td>
+                          <td>Alex</td>
+                          <td>test@gmail.com</td>
+                          <td>123456789</td>
+                          <td>01-01-1918</td>
+                          <td>AED 300.00</td>
+                          <td>
+                            <div class="onoffswitch">
+                              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch22" checked>
+                              <label class="onoffswitch-label" for="myonoffswitch13">
+                                  <span class="onoffswitch-inner"></span>
+                                  <span class="onoffswitch-switch"></span>
+                              </label>
+                            </div>
+                          </td>  
+                          <td>
+                            <a href="../pages/view-customer.html" class="action"><i class="fa fa-eye" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="View"></i></a>
+                            <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Change Status"><i class="fa fa-flag" data-toggle="modal" data-target="#changeStatus"></i></a>
+                            <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#myModal"></i></a>
+                          </td>                    
+                        </tr>
+                        </tbody>
+                      </table>
+                  </div>
+                  </div>
+                  <div id="transactions" class="tab-pane fade in active">
+                    <div class="row">
+                      <div class="filter-section col-md-9">
+                        <form class="form-inline clearfix" id="filter-search">
+                          <div class="form-group">
+                            <label for="">Status</label>
+                            <select class="selectpicker" >
+                                <option value="administrator">All</option>
+                                <option value="Merchant">Paid</option>
+                                <option value="Merchant">Unpaid</option>
+                            </select>
+                          </div>
+                          <div class="input-group date" data-provide="datepicker">
+                            <label for="">From Date</label>
+                            <div class="filter-date">
+                              <input type="text" class="form-control" id="data-date">
+                              <div class="input-group-addon">
+                                  <span class="fa fa-calendar"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="input-group date" data-provide="datepicker">
+                            <label for="">To Date</label>
+                            <div class="filter-date">
+                              <input type="text" class="form-control" id="data-date">
+                              <div class="input-group-addon">
+                                  <span class="fa fa-calendar"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group search-filter">
+                            <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
+                            <div class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </div>
+                          </div>
+                        </form>
                       </div>
-                    </form>
+                      <div class="pay-bal-del col-md-3">
+                      <p class="paid"><label>Total amount paid:</label><span>AED 212.59</span></p>
+                      <p class="due"><label>Total amount due:</label><span>AED 212.59</span></p>
+                    </div>
+                    </div>
+                    <div class="table-responsive">
+                      <table id="transc" class="table table-bordered">
+                        <thead>
+                          <tr> 
+                            <th>Sr.No</th>
+                            <th>Ref ID</th>                        
+                            <th>Merchant</th>
+                            <th>Customer</th>
+                            <th>Trans Date</th>
+                            <th>Amount</th> 
+                            <th>Payment Date</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td>01</td>
+                          <td>TR001</td>
+                          <td>Dolae Gabana</td>
+                          <td>Josephyie Drkin</td>
+                          <td>15-03-2018</td>
+                          <td>AED 200.00</td>
+                          <td>19-03-2018</td>
+                          <td>Paid</td>                      
+                        </tr>
+                        <tr>
+                          <td>02</td>
+                          <td>TR009</td>
+                          <td>Alex</td>
+                          <td>Franklin</td>
+                          <td>123456789</td>
+                          <td>01-01-1918</td>
+                          <td>AED 300.00</td>
+                          <td><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Pay Now</button></td>
+                        </tr>
+                        <tr>
+                          <td>03</td>
+                          <td>TR032</td>
+                          <td>Charles</td>
+                          <td>Joseph</td>
+                          <td>123456789</td>
+                          <td>01-01-1918</td>
+                          <td>AED 500.00</td>
+                          <td><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Pay Now</button></td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>TR909</td>
+                          <td>Robert</td>
+                          <td>Mary</td>
+                          <td>123456789</td>
+                          <td>01-01-1918</td>
+                          <td>AED 300.00</td>
+                          <td>
+                            Paid
+                          </td>                    
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-                <hr>
-                  <div class="table-responsive">
-                  <table id="customer" class="table table-bordered table-striped">
-                    <thead>
-                      <tr> 
-                        <th>Sr.No</th>
-                        <th>Ref ID</th>                        
-                        <th>Customer</th>
-                        <th>Company</th>
-                        <th>Mobile Number</th>
-                        <th>D.O.B</th> 
-                        <th>Registered On</th>
-                        <th>eWallet</th>
-                        <th>Status</th>
-                        <th>Action</th>                     
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>01</td>
-                        <td>E0001</td>
-                        <td>Alex</td>
-                        <td>test@gmail.com</td>
-                        <td>123456789</td>
-                        <td>01-01-1918</td>
-                        <td>01-04-2018</td>
-                        <td>AED 300.00</td>
-                        <td>
-                          <div class="onoffswitch">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch13" checked>
-                            <label class="onoffswitch-label" for="myonoffswitch13">
-                                <span class="onoffswitch-inner"></span>
-                                <span class="onoffswitch-switch"></span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                        <a href="../pages/view-customer.html" class="action"><i class="fa fa-eye" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="View"></i></a>
-                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Change Status"><i class="fa fa-flag" data-toggle="modal" data-target="#changeStatus"></i></a>
-                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#myModal"></i></a>
-                        </td>                      
-                      </tr>
-                      <tr>
-                        <td>02</td>
-                        <td>E0001</td>
-                        <td>Alex</td>
-                        <td>test@gmail.com</td>
-                        <td>123456789</td>
-                        <td>01-01-1918</td>
-                        <td>01-04-2018</td>
-                        <td>AED 300.00</td>
-                        <td>
-                          <div class="onoffswitch">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch14" checked>
-                            <label class="onoffswitch-label" for="myonoffswitch13">
-                                <span class="onoffswitch-inner"></span>
-                                <span class="onoffswitch-switch"></span>
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                        <a href="../pages/view-customer.html" class="action"><i class="fa fa-eye" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="View"></i></a>
-                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Change Status"><i class="fa fa-flag" data-toggle="modal" data-target="#changeStatus"></i></a>
-                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#myModal"></i></a>
-                        </td>                      
-                      </tr>
-                      <tr>
-                        <td>03</td>
-                        <td>E0001</td>
-                        <td>Alex</td>
-                        <td>test@gmail.com</td>
-                        <td>123456789</td>
-                        <td>01-01-1918</td>
-                        <td>01-04-2018</td>
-                        <td>AED 300.00</td>
-                        <td>
-                          <div class="onoffswitch">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch15" checked>
-                            <label class="onoffswitch-label" for="myonoffswitch13">
-                                <span class="onoffswitch-inner"></span>
-                                <span class="onoffswitch-switch"></span>
-                            </label>
-                          </div>
-                        </td> 
-                        <td>
-                        <a href="../pages/view-customer.html" class="action"><i class="fa fa-eye" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="View"></i></a>
-                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Change Status"><i class="fa fa-flag" data-toggle="modal" data-target="#changeStatus"></i></a>
-                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#myModal"></i></a>
-                        </td>                     
-                      </tr>
-                      <tr>
-                        <td>10</td>
-                        <td>E0001</td>
-                        <td>Alex</td>
-                        <td>test@gmail.com</td>
-                        <td>123456789</td>
-                        <td>01-01-1918</td>
-                        <td>01-04-2018</td>
-                        <td>AED 300.00</td>
-                        <td>
-                          <div class="onoffswitch">
-                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch22" checked>
-                            <label class="onoffswitch-label" for="myonoffswitch13">
-                                <span class="onoffswitch-inner"></span>
-                                <span class="onoffswitch-switch"></span>
-                            </label>
-                          </div>
-                        </td>  
-                        <td>
-                        <a href="../pages/view-customer.html" class="action"><i class="fa fa-eye" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="View"></i></a>
-                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Change Status"><i class="fa fa-flag" data-toggle="modal" data-target="#changeStatus"></i></a>
-                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#myModal"></i></a>
-                        </td>                    
-                      </tr>
-                    </tbody>
-                  </table>
-                  </div>
-                </div><!-- /.box-body -->
+                </div>
+              </div>
+            </div><!-- /.box-body -->
           </div><!-- /.box -->
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
-      <footer class="main-footer">
-        <strong>Copyright &copy; 2018-2019 <a href="https://www.carmatec.com/" target="_blank">Carmatec</a>.</strong> All rights reserved.
-      </footer>
+    <footer class="main-footer">
+      <strong>Copyright &copy; 2018-2019 <a href="https://www.carmatec.com/" target="_blank">Carmatec</a>.</strong> All rights reserved.
+    </footer>
 
       <!-- Add the sidebar's background. This div must be placed
            immediately after the control sidebar -->
@@ -404,11 +518,11 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-body text-center">
-          <h3>Are you sure want to delete?</h3>
+          <h3>Are you sure want to make this payment?</h3>
         </div>
         <div class="modal-footer text-center">
           
-          <button type="button" class="btn btn-danger">Delete</button>
+          <button type="button" class="btn btn-danger">Ok</button>
 <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
         </div>
       </div>

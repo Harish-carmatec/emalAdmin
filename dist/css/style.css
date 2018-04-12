@@ -552,6 +552,8 @@ sup {
 .modal-primary.emal-popup .modal-body.text-center {
     background: #fff none repeat scroll 0 0 !important;
     color: #9A7A32 !important;
+    float: left;
+    width: 100%;
 }
 .modal-primary.emal-popup .btn-outline {
     background: #3c8dbc none repeat scroll 0 0;
@@ -583,12 +585,14 @@ sup {
     width: 105px;
     padding: 7px 18px;
     color: #fff;
+    cursor: pointer;
 }
 #customerKycEdit .file-upload {
     position: relative;
 }
 #customerKycEdit .file-upload #inputFile{
     cursor: pointer;
+    padding: 0px 12px;
 }
 .modal-primary.emal-popup .modal-header .modal-title {
     color: #9A7A32;

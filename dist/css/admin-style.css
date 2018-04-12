@@ -1,0 +1,6 @@
+.login-box-body button {
+    border-radius: 3px!important;
+}
+.login-box-body button:hover {
+    border-color: #367fa9!important;
+}

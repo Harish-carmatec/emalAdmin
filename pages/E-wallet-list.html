@@ -240,8 +240,112 @@
                 <ul class="nav nav-tabs">
                   <li class="active"><a data-toggle="tab" href="#transactions">Transactions</a></li>
                   <li><a data-toggle="tab" href="#ewallet">eWallet</a></li>
+                  
                 </ul>
                 <div class="tab-content">
+                  <div id="transactions" class="tab-pane fade in active">
+                    <div class="row">
+                      <div class="filter-section col-md-9">
+                        <form class="form-inline clearfix" id="filter-search">
+                          <div class="form-group">
+                            <label for="">Status</label>
+                            <select class="selectpicker" >
+                                <option value="administrator">All</option>
+                                <option value="Merchant">Paid</option>
+                                <option value="Merchant">Unpaid</option>
+                            </select>
+                          </div>
+                          <div class="input-group date" data-provide="datepicker">
+                            <label for="">From Date</label>
+                            <div class="filter-date">
+                              <input type="text" class="form-control" id="data-date">
+                              <div class="input-group-addon">
+                                  <span class="fa fa-calendar"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="input-group date" data-provide="datepicker">
+                            <label for="">To Date</label>
+                            <div class="filter-date">
+                              <input type="text" class="form-control" id="data-date">
+                              <div class="input-group-addon">
+                                  <span class="fa fa-calendar"></span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group search-filter">
+                            <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
+                            <div class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="pay-bal-del col-md-3">
+                      <p class="paid"><label>Total amount paid:</label><span>AED 212.59</span></p>
+                      <p class="due"><label>Total amount due:</label><span>AED 212.59</span></p>
+                    </div>
+                    </div>
+                    <div class="table-responsive">
+                      <table id="transc" class="table table-bordered">
+                        <thead>
+                          <tr> 
+                            <th>Sr.No</th>
+                            <th>Ref ID</th>                        
+                            <th>Merchant</th>
+                            <th>Customer</th>
+                            <th>Trans Date</th>
+                            <th>Amount</th> 
+                            <th>Payment Date</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td>01</td>
+                          <td>TR001</td>
+                          <td>Dolae Gabana</td>
+                          <td>Josephyie Drkin</td>
+                          <td>15-03-2018</td>
+                          <td>AED 200.00</td>
+                          <td>19-03-2018</td>
+                          <td>Paid</td>                      
+                        </tr>
+                        <tr>
+                          <td>02</td>
+                          <td>TR009</td>
+                          <td>Alex</td>
+                          <td>Franklin</td>
+                          <td>123456789</td>
+                          <td>01-01-1918</td>
+                          <td>AED 300.00</td>
+                          <td><button class="btn btn-primary" data-toggle="modal" data-target="#payNow">Pay Now</button></td>
+                        </tr>
+                        <tr>
+                          <td>03</td>
+                          <td>TR032</td>
+                          <td>Charles</td>
+                          <td>Joseph</td>
+                          <td>123456789</td>
+                          <td>01-01-1918</td>
+                          <td>AED 500.00</td>
+                          <td><button class="btn btn-primary" data-toggle="modal" data-target="#payNow">Pay Now</button></td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>TR909</td>
+                          <td>Robert</td>
+                          <td>Mary</td>
+                          <td>123456789</td>
+                          <td>01-01-1918</td>
+                          <td>AED 300.00</td>
+                          <td>
+                            Paid
+                          </td>                    
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
                   <div id="ewallet" class="tab-pane fade">
                     <div class="row">
                     <div class="filter-section col-md-9">
@@ -397,109 +501,6 @@
                       </table>
                   </div>
                   </div>
-                  <div id="transactions" class="tab-pane fade in active">
-                    <div class="row">
-                      <div class="filter-section col-md-9">
-                        <form class="form-inline clearfix" id="filter-search">
-                          <div class="form-group">
-                            <label for="">Status</label>
-                            <select class="selectpicker" >
-                                <option value="administrator">All</option>
-                                <option value="Merchant">Paid</option>
-                                <option value="Merchant">Unpaid</option>
-                            </select>
-                          </div>
-                          <div class="input-group date" data-provide="datepicker">
-                            <label for="">From Date</label>
-                            <div class="filter-date">
-                              <input type="text" class="form-control" id="data-date">
-                              <div class="input-group-addon">
-                                  <span class="fa fa-calendar"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="input-group date" data-provide="datepicker">
-                            <label for="">To Date</label>
-                            <div class="filter-date">
-                              <input type="text" class="form-control" id="data-date">
-                              <div class="input-group-addon">
-                                  <span class="fa fa-calendar"></span>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="form-group search-filter">
-                            <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
-                            <div class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                      <div class="pay-bal-del col-md-3">
-                      <p class="paid"><label>Total amount paid:</label><span>AED 212.59</span></p>
-                      <p class="due"><label>Total amount due:</label><span>AED 212.59</span></p>
-                    </div>
-                    </div>
-                    <div class="table-responsive">
-                      <table id="transc" class="table table-bordered">
-                        <thead>
-                          <tr> 
-                            <th>Sr.No</th>
-                            <th>Ref ID</th>                        
-                            <th>Merchant</th>
-                            <th>Customer</th>
-                            <th>Trans Date</th>
-                            <th>Amount</th> 
-                            <th>Payment Date</th>
-                            <th>Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                          <td>01</td>
-                          <td>TR001</td>
-                          <td>Dolae Gabana</td>
-                          <td>Josephyie Drkin</td>
-                          <td>15-03-2018</td>
-                          <td>AED 200.00</td>
-                          <td>19-03-2018</td>
-                          <td>Paid</td>                      
-                        </tr>
-                        <tr>
-                          <td>02</td>
-                          <td>TR009</td>
-                          <td>Alex</td>
-                          <td>Franklin</td>
-                          <td>123456789</td>
-                          <td>01-01-1918</td>
-                          <td>AED 300.00</td>
-                          <td><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Pay Now</button></td>
-                        </tr>
-                        <tr>
-                          <td>03</td>
-                          <td>TR032</td>
-                          <td>Charles</td>
-                          <td>Joseph</td>
-                          <td>123456789</td>
-                          <td>01-01-1918</td>
-                          <td>AED 500.00</td>
-                          <td><button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Pay Now</button></td>
-                        </tr>
-                        <tr>
-                          <td>10</td>
-                          <td>TR909</td>
-                          <td>Robert</td>
-                          <td>Mary</td>
-                          <td>123456789</td>
-                          <td>01-01-1918</td>
-                          <td>AED 300.00</td>
-                          <td>
-                            Paid
-                          </td>                    
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
                 </div>
               </div>
             </div><!-- /.box-body -->
@@ -514,20 +515,23 @@
            immediately after the control sidebar -->
     </div><!-- ./wrapper -->
      <!-- Delete confirmation pop-up -->
-  <div class="modal fade modal-primary delete-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body text-center">
-          <h3>Are you sure want to make this payment?</h3>
-        </div>
-        <div class="modal-footer text-center">
+
+     <div class="modal fade modal-primary emal-popup" id="payNow" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="false">
+    <div class="modal-dialog modal-md" role="document">
+       <div class="modal-contents">
+        <div class="modal-header">
           
-          <button type="button" class="btn btn-danger">Ok</button>
-<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
         </div>
-      </div>
+          <div class="modal-body text-center">
+             <h3 id="content-heading">Are you sure want to make the payment ?</h3>
+             <p>Click "OK" to pay now or press "CANCEL" to pay later.<p>
+          </div>
+          <div class="modal-footer text-center website_footer">
+<button type="button" class="btn btn-primary" title="Cancel" id="btn-cancel" data-dismiss="modal">Cancel</button>
+<a href="#" class="btn deleteLink btn-danger" title="Pay Now" id="YesDelete">OK</a>        </div>
+       </div>
     </div>
-  </div>
+ </div>
   <div class="modal fade modal-primary review-edit-modal" id="changeStatus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog">
       <div class="modal-content">

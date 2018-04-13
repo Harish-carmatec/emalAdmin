@@ -637,6 +637,9 @@ color: #1f1f1f;
     padding: 0;
 }
 /*Manage Transactions css*/
+.small-box .icon {
+    font-size: 130px;
+}
 #customerKycEdit .file-upload p {
     position: absolute;
     top:0px;

@@ -559,6 +559,7 @@
                     <img id="image_upload_preview" src="../dist/img/user2-160x160.jpg" alt="your image" />
                     <input type='file' id="inputFile" />
                     <p class="trigger">Choose file</p>
+<span class="filename"></span>
                   </div>
                   <div class="col-md-6 text-left">
                     <div class="form-group">
@@ -652,7 +653,15 @@
                     </div>
                     <div class="form-group">
                       <div class="col-sm-12"><label>Document File</label>
-                        <div class="file-upload">
+                        <div class="file-upload front">
+                        <input class="form-control" type='file' id="inputFile" />
+                        <p>Choose File</p>
+                      </div>
+                      </div>
+                    </div>
+<div class="form-group">
+                      <div class="col-sm-12"><label>Document File</label>
+                        <div class="file-upload back">
                         <input class="form-control" type='file' id="inputFile" />
                         <p>Choose File</p>
                       </div>
@@ -715,8 +724,22 @@
 jQuery(".trigger").click(function(){
    jQuery("#inputFile").trigger("click");
 });
-jQuery(".file-upload p").click(function(){
-   jQuery(".file-upload #inputFile").trigger("click");
+jQuery(".file-upload.front p").click(function(){
+   jQuery(".file-upload.front #inputFile").trigger("click");
+});
+jQuery(".file-upload.back p").click(function(){
+   jQuery(".file-upload.back #inputFile").trigger("click");
+});
+jQuery('#inputFile').on('load',function(e){
+var inputValue = jQuery('#inputFile').val();
+                  var fileName = e.target.files[0].name;
+            jQuery('.filename').html( fileName );
+});
+jQuery('#inputFile').change(function (e) {
+var inputValue = jQuery('#inputFile').val();
+                  var fileName = e.target.files[0].name;
+            jQuery('.filename').html( fileName );
+            
 });
 function readURL(input) {
     if (input.files && input.files[0]) {

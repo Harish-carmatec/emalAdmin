@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Manage Merchant | Merchant Profile</title>
+    <title>Manage Customer | Customer Profile</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -223,12 +223,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Merchant Profile
+            Customer Profile
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Manage Merchant</a></li>
-            <li class="active">Merchant Profile</li>
+            <li><a href="#">Manage Customer</a></li>
+            <li class="active">Customer Profile</li>
           </ol>
         </section>
 
@@ -240,149 +240,170 @@
               <div class="box box-primary">
                 <div class="box-header">
                   <h3 class="box-title"></h3>
-                  <a class="btn btn-primary pull-right" href="../pages/merchant-list.html"><i class="fa fa-angle-left"></i> Back</a>  
+                  <a class="btn btn-primary pull-right" href="../pages/customer-list.html"><i class="fa fa-angle-left"></i> Back</a>  
                 </div> <!-- /.box-header -->
                 <!-- form start -->
                 <div class="row">
                   <div class="col-sm-12 customer-detail">
                     <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">Merchant Info</h3>
-              <a href="../pages/edit-merchant.html" class="profile-edit" data-toggle="tooltip" data-placement="left" title="" data-original-title="Edit Merchant Info"><i class="fa fa-pencil"></i></a>
+              <h3 class="panel-title">Customer Info</h3>
+              <a href="#" class="profile-edit" data-toggle="tooltip" data-placement="left" title="" data-original-title="Edit Customer Info"><i class="fa fa-pencil" data-toggle="modal" data-target="#customerEdit"></i></a>
             </div>
             <div class="panel-body">
+              <div class="col-md-12 mer-deta">
+                <form class="form-horizontal">
+                  <div class="box-body p0">
+                    <div class="col-md-2">
+                      <img alt="User Pic" src="../dist/img/mer-pic.png" class="img-responsive">
+                    </div>
+                      <div class="col-md-5">
+                          <div class="form-group">
+                            <label for="fname" class="col-sm-5 control-label">Name</label>
+                            <div class="col-sm-7">
+                              <p>Customer Name</p>
+                            </div>
+                          </div>    
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-5 control-label">Birthday</label>
+                            <div class="col-sm-7">
+                            <p>01/01/2000</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-5 control-label">Gender</label>
+                            <div class="col-sm-7">
+                            <p>Male</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-5 control-label">Grade</label>
+                            <div class="col-sm-7">
+                            <p>Premium</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-5 control-label">Transaction Limit</label>
+                            <div class="col-sm-7">
+                            <p>AED 4000</p>
+                            </div>
+                          </div>                     
+                        </div>
+                        <div class="col-md-5">
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-5 control-label">Mobile</label>
+                            <div class="col-sm-7">
+                             <p>255585885</p>
+                            </div>
+                          </div>     
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-5 control-label">Email Id</label>
+                            <div class="col-sm-7">
+                             <p>email@email.com</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-5 control-label">E-wallet balance</label>
+                            <div class="col-sm-7">
+                              <p>2000</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="lname" class="col-sm-5 control-label">Currency</label>
+                            <div class="col-sm-7">
+                              <p>AED</p>
+                            </div>
+                          </div>
+                  </div>
+                </div>
+                </form>
+              </div>
               <div class="col-md-12 customer-tabs">
                  <ul class="nav nav-tabs">
-                    <li ><a data-toggle="tab" href="#MerchantInfo">Merchant Info</a></li>
-                    <li class="active"><a data-toggle="tab" href="#Transaction">Transaction</a></li>
+                    <li class="active"><a data-toggle="tab" href="#CustomerInfo">Customer Info</a></li>
+                    <li><a data-toggle="tab" href="#Transaction">Transaction</a></li>
                   </ul>
                   <div class="tab-content">
-                    <div id="MerchantInfo" class="tab-pane fade">
-                      <div class="row">
-                        <div class="col-sm-8">
-                    <!-- form start -->
-                      <form class="form-horizontal merchant-view">
-                        <div class="box-body">
-                        <div class="merchant-section first">
-                         <div class="form-group merchantlablegroup">
-                          <label for="ptitle" class="col-sm-12 control-label merchantlable">Merchant Details</label>
-                            </div> 
-
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">Merchant Name</label>
-                            <div class="col-sm-8">
-                              <p>Merchant Name</p>
-                            </div>
-                          </div>
-
-                          <div class="form-group">
-                            <label for="fname" class="col-sm-3 control-label">Business Type</label>
-                            <div class="col-sm-8">
-                              <p>Re Seller</p>
-                            </div> 
-                          </div> 
-
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">Mobile</label>
-                            <div class="col-sm-8">
-                              <p>123456789</p>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">Email</label>
-                            <div class="col-sm-8">
-                              <p>Harishcn@carmatec.com</p>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">Address1</label>
-                            <div class="col-sm-8">
-                            <p>Carmatec, #27, Bellandur Main Road, Ambalipura, Bellandur, Bengaluru, Karnataka 560103</p>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">Address2</label>
-                            <div class="col-sm-8">
-                            <p>Carmatec, #27, Bellandur Main Road, Ambalipura, Bellandur, Bengaluru, Karnataka 560103</p>
-                            </div>
-                          </div>
-
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">City</label>
-                            <div class="col-sm-8">
-                              <p>Bangalore</p>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">State/Province</label>
-                            <div class="col-sm-8">
-                                <p>karnataka</p>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">Country</label>
-                            <div class="col-sm-8">
-                                <p>India</p>
-                            </div>
-                          </div>
-
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">Zip/Postal</label>
-                            <div class="col-sm-8">
-                              <p>560057</p>
-                            </div>
-                          </div>
-                        <div class="merchant-section second">
-                         <div class="form-group merchantlablegroup">
-                          <label for="ptitle" class="col-sm-12 control-label merchantlable">Bank Details</label>
-                            </div>
-
-                          <div class="add-new-bank-details">
-                          <a href="javascript:void(0);" class="clone-del-btn"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">Bank Name</label>
-                            <div class="col-sm-8">
-                              <p>HDFC</p>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">Account Name</label>
-                            <div class="col-sm-8">
-                              <p>Harish</p>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">Account Number/ IBAN No</label>
-                            <div class="col-sm-8">
-                              <p>HDFC12345687</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="cloned-bank-details">
-                        </div>
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">Status</label>
-                            <div class="col-sm-8">
-                              <p>Active</p>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label for="lname" class="col-sm-3 control-label">Currency</label>
-                            <div class="col-sm-8">
-                              <p>Dollar</p>
-                            </div>
-                          </div>
-                        </div> 
-                        </div>  
-                        </div><!-- /.box-body -->                    
-                      </form>
+                    <div id="CustomerInfo" class="tab-pane fade in active">
+                      <div class="table-responsive">
+                  <table id="users" class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th class="tabel-heading" colspan="5">KYC Documents</th>
+                      </tr>
+                      <tr> 
+                        <th>Document Type</th>
+                        <th>Id Proof Number</th>                        
+                        <th>Documents</th>
+                        <th>Status</th>
+                        <th>Action</th>                     
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Passport</td>
+                        <td>M0E0001</td>
+                        <td><a href="" class="document-img"><i class="fa fa-file-pdf-o" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="PDF File Name"></i></a><a href="" class="document-img"><i class="fa fa-file-image-o" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Image File Name"></i></a></td>
+                        <td><span class="approved">APPROVED on 21/03/2018</span></td>
+                        <td>
+                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit" ><i class="fa fa-pencil" data-toggle="modal" data-target="#customerKycEdit"></i></a>
+                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#deleteMolda"></i></a>
+                        </td>                     
+                      </tr>
+                      <tr>
+                        <td>03</td>
+                        <td>E0001</td>
+                        <td><a href="" class="document-img"><i class="fa fa-file-pdf-o" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="PDF File Name"></i></a><a href="" class="document-img"><i class="fa fa-file-image-o" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Image File Name"></i></a></td>
+                        <td><span class="status-btn"><button class="apprve" type="button" data-toggle="modal" data-target="#apprModal">Approve</button><button class="reject" type="button" data-toggle="modal" data-target="#rejctModal">Reject</button></span></td>
+                        <td>
+                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit" ><i class="fa fa-pencil" data-toggle="modal" data-target="#customerKycEdit"></i></a>
+                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#deleteMolda"></i></a>
+                        </td>                     
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
+                  <div class="table-responsive">
+                  <table id="users" class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th class="tabel-heading" colspan="5">Card Details</th>
+                      </tr>
+                      <tr> 
+                        <th>Card Type</th>
+                        <th>Card Number</th>                        
+                        <th>Bank Name</th>
+                        <th>Expiry</th>
+                        <th>Action</th>                     
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Visa</td>
+                        <td>1234567891234567</td>
+                        <td>HDFC</td>
+                        <td>March 2022</td>
+                        <td>
+                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#deleteMolda"></i></a>
+                        </td>                     
+                      </tr>
+                      <tr>
+                        <td>Master</td>
+                        <td>1234567891234567</td>
+                        <td>SBI</td>
+                        <td>June 2022</td>
+                        <td>
+                        <a href="javascript:void(0)" class="action" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o" data-toggle="modal" data-target="#deleteMolda"></i></a>
+                        </td>                     
+                      </tr>
+                    </tbody>
+                  </table>
+                  </div>
                     </div>
-                      </div>
-                    </div>
-                    <div id="Transaction" class="tab-pane fade in active">
+                    <div id="Transaction" class="tab-pane fade">
                       <div class="row">
 
-                  <div class="plr10 filter-section col-md-9">
+                  <div class="plr10 filter-section">
                     <form class="form-inline clearfix" id="filter-search">
                       <div class="form-group">
                         <label for="">Status</label>
@@ -418,23 +439,16 @@
                       </div>
                     </form>
                   </div>
-                  <div class="pay-bal-del col-md-3">
-                      <p class="paid"><label>Total amount paid:</label><span>AED 212.59</span></p>
-                      <p class="due"><label>Total amount due:</label><span>AED 212.59</span></p>
-                    </div>
                 </div>
                       <div class="table-responsive">
                   <table id="users" class="table table-bordered">
                     <thead>
                       <tr> 
                         <th>Sr.No</th>
-                        <th>Trans ID</th>                        
-                        <th>Customer Name</th>
-                        <th>Mobile number</th>
-                        <th>Gender</th>
+                        <th>Ref ID</th>                        
+                        <th>Merchant Wallet</th>
                         <th>Trans Date</th>
                         <th>Amount</th>
-                        <th>Payment Date</th>
                         <th>Status</th>                   
                       </tr>
                     </thead>
@@ -443,45 +457,33 @@
                         <td>01</td>
                         <td>E0001</td>
                         <td>Alex</td>
-                        <td>123456789</td>
-                        <td>Male</td>
                         <td>01-01-1918</td>
                         <td>AED 300.00</td>
-                        <td>01-01-1918</td>
-                        <td>Paid</td>                      
-                      </tr>
-                      <tr>
-                        <td>02</td>
-                        <td>E0001</td>
-                        <td>Alex</td>
-                        <td>123456789</td>
-                        <td>Female</td>
-                        <td>01-01-1918</td>
-                        <td>AED 300.00</td>
-                        <td>01-01-1918</td>
-                        <td><button class="btn btn-primary" data-toggle="modal" data-target="#payNow">Pay Now</button></td>                 
-                      </tr>
-                      <tr>
-                      <td>03</td>
-                        <td>E0003</td>
-                        <td>Alex</td>
-                        <td>123456789</td>
-                        <td>Male</td>
-                        <td>01-01-1918</td>
-                        <td>AED 300.00</td>
-                        <td>01-01-1918</td>
-                        <td>Paid</td>
+                        <td>Active</td>                      
                       </tr>
                       <tr>
                         <td>01</td>
                         <td>E0001</td>
                         <td>Alex</td>
-                        <td>123456789</td>
-                        <td>Male</td>
                         <td>01-01-1918</td>
                         <td>AED 300.00</td>
+                        <td>Active</td>                 
+                      </tr>
+                      <tr>
+                        <td>01</td>
+                        <td>E0001</td>
+                        <td>Alex</td>
                         <td>01-01-1918</td>
-                        <td>Paid</td>                    
+                        <td>AED 300.00</td>
+                        <td>Active</td>                    
+                      </tr>
+                      <tr>
+                        <td>01</td>
+                        <td>E0001</td>
+                        <td>Alex</td>
+                        <td>01-01-1918</td>
+                        <td>AED 300.00</td>
+                        <td>Active</td>                    
                       </tr>
                     </tbody>
                   </table>
@@ -504,19 +506,42 @@
       </footer>
     </div><!-- ./wrapper -->
     <!-- Delete popup -->
-    <div class="modal fade modal-primary emal-popup" id="payNow" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="false">
+    <div class="modal fade modal-primary emal-popup" id="deleteMolda" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="false">
     <div class="modal-dialog modal-md" role="document">
        <div class="modal-contents">
-        <div class="modal-header">
-          
-        </div>
           <div class="modal-body text-center">
-             <h3 id="content-heading">Are you sure want to make the payment ?</h3>
-             <p>Click "OK" to pay now or press "CANCEL" to pay later.<p>
+             <h3 id="content-heading">Are you sure want to delete the User ?</h3>
           </div>
           <div class="modal-footer text-center website_footer">
 <button type="button" class="btn btn-primary" title="Cancel" id="btn-cancel" data-dismiss="modal">Cancel</button>
-<a href="#" class="btn deleteLink btn-danger" title="Pay Now" id="YesDelete">OK</a>        </div>
+<a href="#" class="btn deleteLink btn-danger" title="Delete" id="YesDelete">Delete</a>        </div>
+       </div>
+    </div>
+ </div>
+ <!-- approve popup -->
+ <div class="modal fade modal-primary emal-popup" id="apprModal" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="false">
+    <div class="modal-dialog modal-md" role="document">
+       <div class="modal-contents">
+          <div class="modal-body text-center">
+            <h3 id="content-heading">Are you sure want to Approve the User ?</h3>
+          </div>
+          <div class="modal-footer text-center website_footer">
+<button type="button" class="btn btn-primary" title="Cancel" id="btn-cancel" data-dismiss="modal">No</button>
+<a href="#" class="btn deleteLink btn-danger" title="Approve" id="YesAppr">Yes</a>        </div>
+       </div>
+    </div>
+ </div>
+ <!-- reject popup -->
+ <div class="modal fade modal-primary emal-popup" id="rejctModal" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="false">
+    <div class="modal-dialog modal-md" role="document">
+       <div class="modal-contents">
+          <div class="modal-body text-center">
+             <h3 id="content-heading">Are you sure want to Reject the User ?</h3>
+            <textarea class="form-control" placeholder="Please Enter the reason here"></textarea>
+          </div>
+          <div class="modal-footer text-center website_footer">
+<button type="button" class="btn btn-primary" title="Cancel" id="btn-cancel" data-dismiss="modal">Cancel</button>
+<a href="#" class="btn deleteLink btn-danger" title="reject" id="YesRejct">Confirm</a>        </div>
        </div>
     </div>
  </div>
@@ -534,6 +559,7 @@
                     <img id="image_upload_preview" src="../dist/img/user2-160x160.jpg" alt="your image" />
                     <input type='file' id="inputFile" />
                     <p class="trigger">Choose file</p>
+<span class="filename"></span>
                   </div>
                   <div class="col-md-6 text-left">
                     <div class="form-group">
@@ -627,12 +653,26 @@
                     </div>
                     <div class="form-group">
                       <div class="col-sm-12"><label>Document File</label>
-                        <div class="file-upload">
+                        <div class="file-upload front">
                         <input class="form-control" type='file' id="inputFile" />
                         <p>Choose File</p>
                       </div>
                       </div>
                     </div>
+<div class="form-group">
+                      <div class="col-sm-12"><label>Document File</label>
+                        <div class="file-upload back">
+                        <input class="form-control" type='file' id="inputFile" />
+                        <p>Choose File</p>
+                      </div>
+                      </div>
+                    </div>
+                    <!-- <div class="profile-img-upload">
+                    <img id="image_upload_preview" src="../dist/img/user2-160x160.jpg" alt="your image" />
+                    <input type='file' id="inputFile" />
+                    <p class="trigger">Choose file</p>
+                  </div> -->
+                  </div>
                 </form>
              </div>
           </div>
@@ -684,6 +724,23 @@
 jQuery(".trigger").click(function(){
    jQuery("#inputFile").trigger("click");
 });
+jQuery(".file-upload.front p").click(function(){
+   jQuery(".file-upload.front #inputFile").trigger("click");
+});
+jQuery(".file-upload.back p").click(function(){
+   jQuery(".file-upload.back #inputFile").trigger("click");
+});
+$(document).ready(function(){
+var inputValue = jQuery('#inputFile').val();
+                  var fileName = e.target.files[0].name;
+            jQuery('.filename').html( fileName );
+});
+jQuery('#inputFile').change(function (e) {
+var inputValue = jQuery('#inputFile').val();
+                  var fileName = e.target.files[0].name;
+            jQuery('.filename').html( fileName );
+            
+});
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -699,15 +756,6 @@ function readURL(input) {
 $("#inputFile").change(function () {
     readURL(this);
 });
-
-$('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
-    localStorage.setItem('activeTab', $(e.target).attr('href'));
-});
-var activeTab = localStorage.getItem('activeTab');
-console.log(activeTab);
-if (activeTab) {
-   $('a[href="' + activeTab + '"]').tab('show');
-}
     </script>
   </body>
 </html>
